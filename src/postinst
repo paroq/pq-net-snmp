@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "pq-net-snmp postinstall script"
+echo "  - setting permissions on snmpd and snmptrapd"
+sudo true
+sudo setcap 'cap_net_bind_service=+ep' $PART_DIR/sbin/snmpd
+sudo setcap 'cap_net_bind_service=+ep' $PART_DIR/sbin/snmptrapd
